@@ -24,37 +24,29 @@ class BooksController < ApplicationController
 		@books = Book.find(params[:id])
 	end	
 
-end	
-
-
-
-	
-
-
-	def edit
-		@list = List.find(params[:id])
-		
-	end
-	
 	def update
-		@list= List.find(params[:id])
-      	if @list.update(list_params)
-      		flash[:notice] = "List successfully updated!"
-      		redirect_to lists_path
+		@books= Book.find(params[:id])
+      	if @books.update(book_params)
+ 
+      		redirect_to books_path
       	else
       		render :edit
       	end	
     end 
 
     def destroy
-    	@list = List.find(params[:id])
-    	@list.destroy
-    	flash[:notice] = "List successfully deleted!"
-    	redirect_to lists_path
+    	@books = Book.find(params[:id])
+    	@books.destroy
+    	redirect_to bookss_path
     end				
 
 	private
-		def list_params
-			params.require(:list).permit(:name)
-		end				
-end		
+		def book_params
+			params.require(:books).permit(:name)
+		end			
+
+end	
+
+	
+		
+	
