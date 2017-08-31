@@ -1,1 +1,15 @@
-show.html.erb
+<h1> <%= @book.name %> </h1>
+
+<hr />
+
+<p><%= image_tag @book.picture_url.to_s, style:"width:200px; height:200px;", class:"img-circle" %></p>
+
+
+<p><%= link_to "Edit", edit_book_path(@book)%></p>
+
+
+
+ 
+<p><%= link_to "Delete", book_path(@book),
+                           :data => {:confirm => "You sure?",
+                                     :method => "delete"} %></p>
