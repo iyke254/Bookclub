@@ -1,4 +1,4 @@
 class Book < ActiveRecord::Base
-	validates :name, :presence => true
 	mount_uploader :picture, PictureUploader
+	validates :name, :presence => true
 end	
