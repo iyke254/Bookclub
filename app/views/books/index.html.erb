@@ -40,11 +40,13 @@
 <ul class= "book">
 
 <% @books.each do |book| %>
-	<li><%= link_to book.name, book_path(book)%></li>
-  <p><%= image_tag book.picture_url.to_s, style:"width:200px; height:200px;", class:"img-circle" %></p>
+	<h3><li><%= link_to book.name, book_path(book)%></li></h3>
+  <p><%= image_tag book.picture_url.to_s, style:"width:192px; height:292px;", class:"img-circle" %></p>
 <% end %>
+
+<%= link_to "New Book", new_book_path %>
 
 </ul> 
 
-<%= link_to "New Book", new_book_path %>
+
 

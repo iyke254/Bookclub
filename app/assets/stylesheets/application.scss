@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import "materialize";
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
@@ -27,3 +28,10 @@ h2, h1 {
   color: #e8a725;
 }
 
+.book {
+	text-align: center;
+}
+
+h3 {
+	font-size: 80px;
+}
