@@ -4,6 +4,8 @@
 
 <p><%= image_tag @book.picture_url.to_s, style:"width:192px; height:292px;", class:"img-circle" %></p>
 
+<h4><%= @book.description %></h4>
+
 
 <p><%= link_to "Edit", edit_book_path(@book)%></p>
 
