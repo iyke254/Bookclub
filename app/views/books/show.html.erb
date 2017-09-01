@@ -7,6 +7,31 @@
 <h4><%= @book.description %></h4>
 
 
+
+<% if @book.review.any? %>
+	<h4>Here are the reviews for this book</h4>
+	<ul>
+		<% @book.reviews.each do |review| %>
+		<li>
+			<%= review.description %>
+			<%= link_to "Edit", edit_book_review_path(@book, review) %>
+			<%= link_to "Delete", book_review_path(@book, review),
+									:data => {confirm => "Are you sure?",
+										:method => "delete"} %>
+		</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p> There are no reviews yet add your OWN now!!</p>
+<% end %>
+
+<%= link_to "Add a review", new_book_review_path(@book) %>
+			
+
+
+
+
+
 <p><%= link_to "Edit", edit_book_path(@book)%></p>
 
 
