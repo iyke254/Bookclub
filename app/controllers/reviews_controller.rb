@@ -15,28 +15,28 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @list = Book.find(params[:list_id])
-    @review = @list.reviews.find(params[:id])
+    @book = Book.find(params[:book_id])
+    @review = @book.reviews.find(params[:id])
    
  end
 
 def update
-   @list = Book.find(params[:list_id])
-   @review = @list.reviews.find(params[:id])
+   @book = Book.find(params[:book_id])
+   @review = @book.reviews.find(params[:id])
    if @review.update(review_params)
      flash[:notice] = "Task successfully updated!"
-     redirect_to list_path(@list)
+     redirect_to book_path(@book)
    else
      render :edit
    end
  end
 
 def destroy
-   @list = Book.find(params[:list_id])
-   @review = @list.reviews.find(params[:id])
+   @book = Book.find(params[:book_id])
+   @review = @book.reviews.find(params[:id])
    @review.destroy
    flash[:notice] = "Review successfully deleted!"
-   redirect_to list_path(@list)
+   redirect_to book_path(@book)
  end
 
   private
