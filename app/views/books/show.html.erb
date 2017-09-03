@@ -8,7 +8,7 @@
 
 
 
-<% if @book.review.any? %>
+<% if @book.reviews.any? %>
 	<h4>Here are the reviews for this book</h4>
 	<ul>
 		<% @book.reviews.each do |review| %>
@@ -16,7 +16,7 @@
 			<%= review.description %>
 			<%= link_to "Edit", edit_book_review_path(@book, review) %>
 			<%= link_to "Delete", book_review_path(@book, review),
-									:data => {confirm => "Are you sure?",
+									:data => {:confirm => "Are you sure?",
 										:method => "delete"} %>
 		</li>
 		<% end %>
