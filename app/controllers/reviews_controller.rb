@@ -24,7 +24,7 @@ def update
    @book = Book.find(params[:book_id])
    @review = @book.reviews.find(params[:id])
    if @review.update(review_params)
-     flash[:notice] = "Task successfully updated!"
+     flash[:notice] = "Review successfully updated!"
      redirect_to book_path(@book)
    else
      render :edit
