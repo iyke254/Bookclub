@@ -15,13 +15,13 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:list_id])
+    @list = Book.find(params[:list_id])
     @review = @list.reviews.find(params[:id])
    
  end
 
 def update
-   @list = List.find(params[:list_id])
+   @list = Book.find(params[:list_id])
    @review = @list.reviews.find(params[:id])
    if @review.update(review_params)
      flash[:notice] = "Task successfully updated!"
@@ -32,7 +32,7 @@ def update
  end
 
 def destroy
-   @list = List.find(params[:list_id])
+   @list = Book.find(params[:list_id])
    @review = @list.reviews.find(params[:id])
    @review.destroy
    flash[:notice] = "Review successfully deleted!"
